@@ -60,7 +60,8 @@
         "postcss": "8.2.13",
         "postcss-color-mod-function": "3.0.3",
         "postcss-easy-import": "4.0.0",
-        "pump": "3.0.0"
+        "pump": "3.0.0",
+        "vanilla-cookieconsent": "^2.8.9"
     },
     "browserslist": [
         "defaults"
