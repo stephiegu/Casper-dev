@@ -3,7 +3,7 @@ var cc = initCookieConsent();
 
 // run plugin with your configuration
 cc.run({
-    current_lang: 'de',
+    current_lang: 'en',
     autoclear_cookies: true,                   // default: false
     page_scripts: true,                        // default: false
 
