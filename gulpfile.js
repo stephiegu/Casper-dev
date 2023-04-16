@@ -89,11 +89,20 @@ function zipper(done) {
     ], handleError(done));
 }
 
+function cookieconsent(done) {
+    pump([
+        src(['node_modules/vanilla-cookieconsent/dist/*.js',
+        'node_modules/vanilla-cookieconsent/dist/*.css']),
+        dest('assets/built/', {sourcemaps: '.'}),
+        livereload()
+    ], handleError(done));
+}
+
 const cssWatcher = () => watch('assets/css/**', css);
 const jsWatcher = () => watch('assets/js/**', js);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const watcher = parallel(cssWatcher, jsWatcher, hbsWatcher);
-const build = series(css, js);
+const build = series(css, js, cookieconsent);
 
 exports.build = build;
 exports.zip = series(build, zipper);
